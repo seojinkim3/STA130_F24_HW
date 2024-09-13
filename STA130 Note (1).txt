@@ -1,0 +1,94 @@
+﻿2. 
+Observations: These are individual entries or data points in a dataset, with each one representing a single unit of data (e.g., one customer or one measurement event).
+Variables: These are the different characteristics or measurements collected for each observation, such as numerical, categorical, or text data (e.g., Name, Age, Grade, and Major in a student dataset).
+
+
+4. 
+To sum up, the DataFrame's dimensions are fully depicted by df.shape, whereas df.describe() offers statistical summaries and might exclude some columns or have inconsistencies because of how it handles missing values and other data types.
+
+
+5.
+Attributes: Accessible without parenthesis, they represent information or an object's characteristics (e.g., df.shape).
+Methods: Use parenthesis to access actions or computations that can be done on the object (e.g., df.describe()).
+
+
+Summary of Interaction
+Objective: The primary goal of the interaction was to understand how to analyze and summarize data using Python (Pandas). Key tasks included checking dataset dimensions, identifying missing values, and understanding the concepts of observations and variables. Additionally, the interaction aimed to clarify the differences between attributes and methods in Python.
+Key Points Discussed:
+1. Checking Dataset Dimensions:
+   * df.shape: Used to get the number of rows and columns in the dataset.
+
+
+2. Checking for Missing Values:
+   * Methods Used:
+      * df.isna().sum(): Counts missing values per column.
+      * df.describe(): Provides summary statistics, including counts of non-missing values.
+
+
+3. Observations vs. Variables:
+   * Observations: Individual rows or data points in the dataset.
+   * Variables: Columns or features describing the observations.
+   * Example: In a dataset of employees, each row represents an observation, and each column represents a variable (e.g., Name, Age, Department).
+
+
+4. Providing Summaries of Columns:
+   * Methods:
+      * df.info(): Gives an overview of data types and non-null counts.
+      * df.describe(): Summarizes numerical columns and, with include='all', includes categorical columns.
+      * df.dtypes: Shows data types of each column.
+      * df.isna().sum(): Counts missing values per column.
+
+
+5. Attributes vs. Methods:
+   * Attributes: Represent properties of an object, accessed without parentheses (e.g., df.shape).
+   * Methods: Represent actions or computations, accessed with parentheses (e.g., df.describe()).
+Conclusion: The interaction provided insights into checking and summarizing datasets using Python’s Pandas library, understanding the structure of data, and distinguishing between attributes and methods. These skills are essential for effective data analysis and manipulation.
+6.
+Count: The column's total number of non-null values. It displays the number of entries in every column.
+
+
+Mean: The column's average value, determined by dividing the total number of values by the number of values that are not null.
+
+
+Standard deviation, or Std, is a metric used to express how much variance or dispersion there is in a column. It displays the degree of deviation of each value in the column from the mean.
+
+
+Min: The column's lowest possible value. It stands for the lowest value found.
+
+
+The value below which 25% of the data falls is known as the first quarter, or 25%. This is the lower end of the data distribution and is sometimes referred to as the first quartile (Q1).
+
+
+50%, also known as the median or second quantile, is the column's middle value when the data is arranged in ascending order. This is also referred to as the second quartile (Q2) or the median.
+
+
+The value below which 75% of the data falls is known as the third quarter, or 75%. This is a measurement of the top end of the data distribution and is also referred to as the third quartile (Q3).
+
+
+Max: The column's highest possible value. It stands for the highest value found.
+
+
+7.
+Application of df.dropna():
+Scenario: When there is little to no missing data and deleting rows won't materially alter the dataset, it is preferable to remove rows with missing values.
+Example: Using df.dropna() to remove the rows in an otherwise big dataset that have a small number of missing values helps preserve the integrity of the dataset.
+
+
+Application of del df['col']:
+Situation: When a column contains a large percentage of missing data or is not essential to the analysis, it is preferable to remove the columns with missing values.
+Example: To simplify the dataset, use del df['col'] if a column has primarily missing values and is not crucial to your research.
+
+
+Applying del df['col'] before df.dropna() is crucial.
+Reason: By simplifying the dataset, removing columns with a high percentage of missing data first can improve the efficiency and clarity of the df.dropna() function.
+
+
+Example and Justification:
+Example: If a dataset has missing values in both rows and columns, remove any missing data from the columns first, and then use df.dropna() to remove any missing values from the rows that remain.
+Justification: By ensuring that the dataset is clean and only includes complete cases, this method improves its analytical suitability.
+
+
+8.
+Grouping: The DataFrame is grouped by the values in the pclass column (which designates the passenger class: first, second, or third class) using the function df.groupby("pclass").
+By choosing the Column: ["fare"], we indicate that we wish to compute descriptive statistics for each group's fare column.
+The function.describe() generates descriptive data for each passenger class's fare.
